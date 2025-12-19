@@ -1,0 +1,17 @@
+import { createRouter, createWebHistory } from 'vue-router'
+import Home from './views/Home.vue'
+
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home,
+  },
+]
+
+export function createAppRouter() {
+  return createRouter({
+    history: createWebHistory(),
+    routes,
+  })
+}

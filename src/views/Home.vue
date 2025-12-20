@@ -6,32 +6,17 @@ import Footer from '../components/Footer.vue'
 const faqItems = ref([
   {
     question: 'Do I need to create an account?',
-    answer: 'No. FloraFeral doesn\'t require accounts. Everything runs locally in your browser.',
+    answer: 'No account needed for FloraFeral. Everything runs locally in your browser. The only account you need is with Replicate, a trusted provider (a Cloudflare company), to access their AI models.',
     open: false
   },
   {
     question: 'Where is my data stored?',
-    answer: 'All your data lives on your device. There\'s no FloraFeral backend storing your work.',
+    answer: 'Your data lives in your browser. You decide whether to save workflows locally or not. Replicate stores generated images for 1 hour on their servers, then they\'re automatically deleted.',
     open: false
   },
   {
     question: 'How are inferences executed?',
     answer: 'Using your own Replicate API key (BYOK - Bring Your Own Key). You pay Replicate directly for compute.',
-    open: false
-  },
-  {
-    question: 'Which models can I use?',
-    answer: 'Any compatible model available on Replicate\'s catalog. You can mix and match multiple models in a single workflow.',
-    open: false
-  },
-  {
-    question: 'Can I combine multiple models in one workflow?',
-    answer: 'Yes! Design multi-model pipelines on the canvas, chaining outputs from one model into another.',
-    open: false
-  },
-  {
-    question: 'Can results be versioned and reproduced?',
-    answer: 'Yes. Adjust seeds/parameters and save your workflows locally for consistent, reproducible results.',
     open: false
   },
   {
@@ -47,6 +32,11 @@ const faqItems = ref([
   {
     question: 'What does FloraFeral cost?',
     answer: 'FloraFeral is open-source and free. Inference costs depend on your Replicate account usage.',
+    open: false
+  },
+  {
+    question: 'Why is FloraFeral free when others charge?',
+    answer: 'We believe in the internet as it used to be—built for the common good, not just profit. FloraFeral is a passion project created to empower creators, not extract money from them. Open-source, transparent, and community-driven.',
     open: false
   }
 ])

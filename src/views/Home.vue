@@ -88,7 +88,7 @@ const toggleFaq = (index) => {
               </p>
             </div>
             <div class="hero-visual">
-              <img src="../assets/canvas-preview.png" alt="FloraFeral Canvas Interface" class="hero-image" />
+              <img src="../assets/hero.png" alt="FloraFeral Canvas Interface" class="hero-image" />
             </div>
           </div>
         </div>
@@ -114,8 +114,53 @@ const toggleFaq = (index) => {
         </div>
       </section>
 
+      <!-- Features Section -->
+      <section id="features" class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Powerful Features</h2>
+            <p class="section-subtitle">Everything you need for professional AI image generation</p>
+          </div>
+
+          <div class="features-list">
+            <!-- Feature 1 -->
+            <div class="feature-row">
+              <div class="feature-content">
+                <h3 class="feature-title">Latest Models Available</h3>
+                <p class="feature-description">Access cutting-edge models like VEO, Flux, GPT-4.5, and more through Replicate's catalog. Stay at the forefront of AI image generation with the newest and most powerful models.</p>
+              </div>
+              <div class="feature-visual">
+                <img src="../assets/models.png" alt="Latest AI Models" class="feature-image" />
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="feature-row feature-row-reverse">
+              <div class="feature-content">
+                <h3 class="feature-title">Export/Import Workflows</h3>
+                <p class="feature-description">Share workflow files without uploading anything to servers. Full portability and control over your creative processes. Save, share, and collaborate without compromises.</p>
+              </div>
+              <div class="feature-visual">
+                <img src="../assets/save.png" alt="Export and Import Workflows" class="feature-image" />
+              </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="feature-row">
+              <div class="feature-content">
+                <h3 class="feature-title">Built For Creators, Not Profit</h3>
+                <p class="feature-description">Tools designed for designer comfort and productivity, not for extracting money from you. Open-source, transparent, and focused on empowering creators.</p>
+              </div>
+              <div class="feature-visual">
+                <img src="../assets/for_creators.png" alt="Built For Creators" class="feature-image" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Benefits Section -->
-      <section id="benefits" class="section">
+      <section id="benefits" class="section section-dark">
         <div class="container">
           <div class="section-header">
             <h2 class="section-title">Why Choose FloraFeral</h2>
@@ -174,30 +219,6 @@ const toggleFaq = (index) => {
               </div>
               <h3 class="benefit-title">Reusable Workflows</h3>
               <p class="benefit-description">Save templates and workflows to scale your creative process.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Features Section -->
-      <section id="features" class="section section-dark">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Powerful Features</h2>
-            <p class="section-subtitle">Everything you need for professional AI image generation</p>
-          </div>
-          <div class="features-grid">
-            <div class="feature-card">
-              <h3 class="feature-title">Latest Models Available</h3>
-              <p class="feature-description">Access cutting-edge models like VEO, Flux, GPT-4.5, and more through Replicate's catalog.</p>
-            </div>
-            <div class="feature-card">
-              <h3 class="feature-title">Export/Import Workflows</h3>
-              <p class="feature-description">Share workflow files without uploading anything to servers. Full portability and control.</p>
-            </div>
-            <div class="feature-card">
-              <h3 class="feature-title">Built For Creators, Not Profit</h3>
-              <p class="feature-description">Tools designed for designer comfort and productivity, not for extracting money from you.</p>
             </div>
           </div>
         </div>
@@ -488,8 +509,6 @@ const toggleFaq = (index) => {
   width: 100%;
   height: auto;
   border-radius: var(--flora-radius-xl);
-  border: var(--flora-border-width-thin) solid var(--flora-color-border-default);
-  box-shadow: var(--flora-shadow-lg);
 }
 
 /* Buttons */
@@ -679,41 +698,85 @@ const toggleFaq = (index) => {
   line-height: var(--flora-line-height-relaxed);
 }
 
-/* Features Grid */
-.features-grid {
+/* Features List */
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--flora-space-16);
+  margin-top: var(--flora-space-12);
+}
+
+.feature-row {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--flora-space-8);
-  max-width: 1200px;
-  margin: 0 auto;
+  align-items: center;
 }
 
-@media (min-width: 768px) {
-  .features-grid {
-    grid-template-columns: repeat(3, 1fr);
+@media (min-width: 1024px) {
+  .feature-row {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--flora-space-12);
   }
 }
 
-.feature-card {
-  padding: var(--flora-space-6);
-  background: var(--flora-color-surface);
-  border-left: 4px solid var(--flora-color-accent);
-  border-radius: var(--flora-radius-md);
+.feature-row-reverse {
+  direction: ltr;
+}
+
+@media (min-width: 1024px) {
+  .feature-row-reverse {
+    direction: rtl;
+  }
+
+  .feature-row-reverse .feature-content,
+  .feature-row-reverse .feature-visual {
+    direction: ltr;
+  }
+}
+
+.feature-content {
   display: flex;
   flex-direction: column;
-  gap: var(--flora-space-3);
+  gap: var(--flora-space-4);
 }
 
 .feature-title {
-  font-size: var(--flora-font-size-lg);
-  font-weight: var(--flora-font-weight-semibold);
+  font-size: var(--flora-font-size-2xl);
+  font-weight: var(--flora-font-weight-bold);
   color: var(--flora-color-text-primary);
+  line-height: var(--flora-line-height-tight);
+}
+
+@media (min-width: 768px) {
+  .feature-title {
+    font-size: var(--flora-font-size-3xl);
+  }
 }
 
 .feature-description {
   color: var(--flora-color-text-secondary);
-  font-size: var(--flora-font-size-sm);
+  font-size: var(--flora-font-size-base);
   line-height: var(--flora-line-height-relaxed);
+}
+
+@media (min-width: 768px) {
+  .feature-description {
+    font-size: var(--flora-font-size-lg);
+  }
+}
+
+.feature-visual {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--flora-radius-xl);
 }
 
 /* Integration Content */

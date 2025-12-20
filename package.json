@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.2.8",
+    "@fontsource/open-sans": "^5.2.7",
     "@fontsource/playfair-display": "^5.2.8",
     "vue": "^3.5.24"
   },

@@ -11,16 +11,27 @@
        ======================================== */
   
     /* Background Colors */
-    --flora-color-bg-primary: #131313;
-    --flora-color-bg-secondary: #1a1a1a;
-    --flora-color-bg-tertiary: #242424;
-    --flora-color-bg-elevated: #2a2a2a;
-    --flora-color-bg-overlay: rgba(0, 0, 0, 0.8);
+    --flora-color-bg-primary-base: #131313;
+    --flora-color-bg-secondary-base: #1a1a1a;
+    --flora-color-bg-tertiary-base: #242424;
+    --flora-color-bg-elevated-base: #2a2a2a;
+
+    /* Background Colors - Darker */
+    --flora-color-bg-primary: #0a0a0a;
+    --flora-color-bg-secondary: #0f0f0f;
+    --flora-color-bg-tertiary: #1a1a1a;
+    --flora-color-bg-elevated: #1f1f1f;
+    --flora-color-bg-overlay: rgba(0, 0, 0, 0.85);
   
     /* Surface Colors (for cards, panels) */
-    --flora-color-surface: #1e1e1e;
-    --flora-color-surface-hover: #262626;
-    --flora-color-surface-active: #2d2d2d;
+    --flora-color-surface-base: #1e1e1e;
+    --flora-color-surface-hover-base: #262626;
+    --flora-color-surface-active-base: #2d2d2d;
+
+    /* Surface Colors - Darker */
+    --flora-color-surface: #141414;
+    --flora-color-surface-hover: #1a1a1a;
+    --flora-color-surface-active: #202020;
   
     /* Border Colors */
     --flora-color-border-subtle: #333333;
@@ -96,7 +107,7 @@
        TYPOGRAPHY
        ======================================== */
   
-    --flora-font-family-base: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --flora-font-family-base: 'Open Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
     --flora-font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', monospace;
   
     /* Font Sizes */

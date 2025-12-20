@@ -60,8 +60,6 @@ const mobileMenuOpen = ref(false)
   position: sticky;
   top: 0;
   z-index: var(--flora-z-sticky);
-  background: var(--flora-color-bg-primary);
-  border-bottom: var(--flora-border-width-thin) solid var(--flora-color-border-subtle);
   backdrop-filter: blur(8px);
 }
 
@@ -136,20 +134,38 @@ const mobileMenuOpen = ref(false)
   align-items: center;
   justify-content: center;
   padding: var(--flora-space-3) var(--flora-space-6);
-  background: var(--flora-color-accent);
-  color: var(--flora-color-text-primary);
-  border-radius: var(--flora-radius-md);
+  background: linear-gradient(135deg, var(--flora-color-accent-600) 0%, var(--flora-color-accent-700) 100%);
+  color: #ffffff;
+  border-radius: var(--flora-radius-full);
   font-size: var(--flora-font-size-sm);
   font-weight: var(--flora-font-weight-semibold);
   text-decoration: none;
   transition: all var(--flora-transition-base);
-  box-shadow: var(--flora-shadow-accent);
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.3), 0 1px 4px rgba(22, 163, 74, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity var(--flora-transition-base);
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
 }
 
 .btn-primary:hover {
-  background: var(--flora-color-accent-hover);
-  box-shadow: var(--flora-shadow-accent-lg);
-  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(22, 163, 74, 0.4), 0 2px 8px rgba(22, 163, 74, 0.3);
+  transform: translateY(-2px);
 }
 
 .mobile-menu-btn {
@@ -218,12 +234,14 @@ const mobileMenuOpen = ref(false)
   align-items: center;
   justify-content: center;
   padding: var(--flora-space-3) var(--flora-space-6);
-  background: var(--flora-color-accent);
-  color: var(--flora-color-text-primary);
-  border-radius: var(--flora-radius-md);
+  background: linear-gradient(135deg, var(--flora-color-accent-600) 0%, var(--flora-color-accent-700) 100%);
+  color: #ffffff;
+  border-radius: var(--flora-radius-full);
   font-size: var(--flora-font-size-base);
   font-weight: var(--flora-font-weight-semibold);
   text-decoration: none;
   margin-top: var(--flora-space-4);
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 </style>

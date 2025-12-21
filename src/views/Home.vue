@@ -357,6 +357,7 @@ const toggleFaq = (index) => {
   color: var(--flora-color-text-primary);
   font-family: var(--flora-font-family-base);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .main {
@@ -443,6 +444,7 @@ const toggleFaq = (index) => {
   text-align: center;
   align-items: center;
   max-width: 900px;
+  width: 100%;
   position: relative;
   z-index: 1;
 }
@@ -453,8 +455,8 @@ const toggleFaq = (index) => {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 120%;
-  height: 150%;
+  width: 100%;
+  height: 120%;
   background: radial-gradient(ellipse at center,
     rgba(22, 163, 74, 0.15) 0%,
     rgba(22, 163, 74, 0.08) 30%,
@@ -479,6 +481,9 @@ const toggleFaq = (index) => {
   font-weight: var(--flora-font-weight-bold);
   line-height: var(--flora-line-height-tight);
   color: var(--flora-color-text-primary);
+  width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 @media (min-width: 768px) {
@@ -491,6 +496,9 @@ const toggleFaq = (index) => {
   font-size: var(--flora-font-size-lg);
   color: var(--flora-color-text-secondary);
   line-height: var(--flora-line-height-relaxed);
+  width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 @media (min-width: 768px) {

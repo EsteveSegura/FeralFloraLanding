@@ -2,6 +2,20 @@
 import { ref } from 'vue'
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
+import VideoModal from '../components/VideoModal.vue'
+
+const isModalOpen = ref(false)
+const currentVideoUrl = ref('')
+
+const openVideoModal = (videoUrl) => {
+  currentVideoUrl.value = videoUrl
+  isModalOpen.value = true
+}
+
+const closeVideoModal = () => {
+  isModalOpen.value = false
+  currentVideoUrl.value = ''
+}
 
 const faqItems = ref([
   {
@@ -66,8 +80,8 @@ const toggleFaq = (index) => {
                 <a href="https://app.floraferal.com" target="_blank" class="btn-primary-large">
                   Open App
                 </a>
-                <a href="#tutorials" class="btn-secondary-large">
-                  Explore Features
+                <a href="#first-steps" class="btn-secondary-large">
+                  Quick Start
                 </a>
               </div>
               <p class="hero-note">
@@ -84,28 +98,8 @@ const toggleFaq = (index) => {
         </div>
       </section>
 
-      <!-- First Steps Section -->
-      <section id="first-steps" class="section section-dark">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">First Steps</h2>
-            <p class="section-subtitle">Get started with FloraFeral in minutes</p>
-          </div>
-          <div class="video-container">
-            <iframe
-              class="video-iframe"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="FloraFeral Tutorial"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
-      </section>
-
       <!-- Features Section -->
-      <section id="features" class="section">
+      <section id="features" class="section section-dark">
         <div class="container">
           <div class="section-header">
             <h2 class="section-title">Powerful Features</h2>
@@ -145,6 +139,26 @@ const toggleFaq = (index) => {
                 <img src="../assets/for_creators.png" alt="Built For Creators" class="feature-image" />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Start Section -->
+      <section id="first-steps" class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Quick Start</h2>
+            <p class="section-subtitle">Get started with FloraFeral in minutes</p>
+          </div>
+          <div class="video-container">
+            <iframe
+              class="video-iframe"
+              src="https://www.youtube.com/embed/ukJTEuO4QUU"
+              title="FloraFeral Tutorial"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
           </div>
         </div>
       </section>
@@ -240,42 +254,48 @@ const toggleFaq = (index) => {
             <p class="section-subtitle">Step-by-step tutorials to master FloraFeral</p>
           </div>
           <div class="tutorials-grid">
-            <div class="tutorial-card">
-              <div class="tutorial-placeholder">
-                <svg class="tutorial-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+            <div class="tutorial-card" @click="openVideoModal('https://www.youtube.com/embed/ukJTEuO4QUU')">
+              <div class="tutorial-thumbnail">
+                <img src="../assets/miniature_1.png" alt="From Zero to First Image" class="thumbnail-image" />
+                <div class="play-button-overlay">
+                  <svg class="tutorial-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
               </div>
               <h3 class="tutorial-title">From Zero to First Image</h3>
               <p class="tutorial-description">Complete beginner's guide to your first generation</p>
             </div>
-            <div class="tutorial-card">
+            <div class="tutorial-card tutorial-card-disabled">
               <div class="tutorial-placeholder">
                 <svg class="tutorial-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
+                <span class="soon-badge">Soon</span>
               </div>
               <h3 class="tutorial-title">Combine Two Models</h3>
               <p class="tutorial-description">Learn to chain models in a single workflow</p>
             </div>
-            <div class="tutorial-card">
+            <div class="tutorial-card tutorial-card-disabled">
               <div class="tutorial-placeholder">
                 <svg class="tutorial-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
+                <span class="soon-badge">Soon</span>
               </div>
               <h3 class="tutorial-title">Seeds & Variations</h3>
               <p class="tutorial-description">Master reproducibility and create variations</p>
             </div>
-            <div class="tutorial-card">
+            <div class="tutorial-card tutorial-card-disabled">
               <div class="tutorial-placeholder">
                 <svg class="tutorial-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
+                <span class="soon-badge">Soon</span>
               </div>
               <h3 class="tutorial-title">Upscale & Refine</h3>
               <p class="tutorial-description">Add upscaling and refinement to your pipeline</p>
@@ -322,6 +342,12 @@ const toggleFaq = (index) => {
     </main>
 
     <Footer />
+
+    <VideoModal
+      :isOpen="isModalOpen"
+      :videoUrl="currentVideoUrl"
+      @close="closeVideoModal"
+    />
   </div>
 </template>
 
@@ -615,7 +641,7 @@ const toggleFaq = (index) => {
 .video-container {
   position: relative;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1400px;
   margin: 0 auto;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
   height: 0;
@@ -826,6 +852,100 @@ const toggleFaq = (index) => {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.tutorial-placeholder .tutorial-icon {
+  width: 64px;
+  height: 64px;
+  color: #ffffff;
+  opacity: 0.6;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+  transition: transform var(--flora-transition-base);
+}
+
+.tutorial-card:hover .tutorial-placeholder .tutorial-icon {
+  transform: scale(1.1);
+}
+
+.soon-badge {
+  position: absolute;
+  top: var(--flora-space-3);
+  right: var(--flora-space-3);
+  background: var(--flora-color-accent-600);
+  color: #ffffff;
+  padding: var(--flora-space-1) var(--flora-space-3);
+  border-radius: var(--flora-radius-full);
+  font-size: var(--flora-font-size-xs);
+  font-weight: var(--flora-font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.4);
+}
+
+.tutorial-card-disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.tutorial-card-disabled:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--flora-color-border-default);
+}
+
+.tutorial-card-disabled .tutorial-title,
+.tutorial-card-disabled .tutorial-description {
+  filter: blur(4px);
+  user-select: none;
+}
+
+.tutorial-card-disabled:hover .tutorial-placeholder .tutorial-icon {
+  transform: none;
+}
+
+.tutorial-thumbnail {
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  background: var(--flora-color-bg-tertiary);
+}
+
+.thumbnail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.play-button-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  transition: background var(--flora-transition-base);
+}
+
+.tutorial-card:hover .play-button-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.play-button-overlay .tutorial-icon {
+  width: 64px;
+  height: 64px;
+  color: #ffffff;
+  opacity: 0.6;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+  transition: transform var(--flora-transition-base);
+}
+
+.tutorial-card:hover .play-button-overlay .tutorial-icon {
+  transform: scale(1.1);
 }
 
 .tutorial-icon {

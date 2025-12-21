@@ -18,7 +18,7 @@ const mobileMenuOpen = ref(false)
         <nav class="nav-desktop">
           <a href="#features" class="nav-link">Features</a>
           <a href="#tutorials" class="nav-link">Tutorials</a>
-          <a href="https://github.com/floraferal" target="_blank" class="nav-link">GitHub</a>
+          <a href="https://github.com/EsteveSegura/FloraFeral" target="_blank" class="nav-link">GitHub</a>
           <a href="#faq" class="nav-link">FAQ</a>
         </nav>
 
@@ -45,7 +45,7 @@ const mobileMenuOpen = ref(false)
       <nav v-if="mobileMenuOpen" class="nav-mobile">
         <a href="#features" class="nav-link-mobile" @click="mobileMenuOpen = false">Features</a>
         <a href="#tutorials" class="nav-link-mobile" @click="mobileMenuOpen = false">Tutorials</a>
-        <a href="https://github.com/floraferal" target="_blank" class="nav-link-mobile">GitHub</a>
+        <a href="https://github.com/EsteveSegura/FloraFeral" target="_blank" class="nav-link-mobile">GitHub</a>
         <a href="#faq" class="nav-link-mobile" @click="mobileMenuOpen = false">FAQ</a>
         <a href="https://app.floraferal.com" target="_blank" class="btn-primary-mobile">
           Open App

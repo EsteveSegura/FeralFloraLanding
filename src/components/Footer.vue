@@ -24,7 +24,7 @@ const currentYear = new Date().getFullYear()
             <li><a href="https://app.floraferal.com" target="_blank" class="footer-link">Open App</a></li>
             <li><a href="#features" class="footer-link">Features</a></li>
             <li><a href="#tutorials" class="footer-link">Tutorials</a></li>
-            <li><a href="#faq" class="footer-link">FAQ</a></li>
+            <li><a href="https://girlazo.com" target="_blank" class="footer-link">Author</a></li>
           </ul>
         </div>
 

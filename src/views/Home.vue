@@ -52,6 +52,11 @@ const faqItems = ref([
     question: 'Why is FloraFeral free when others charge?',
     answer: 'We believe in the internet as it used to be—built for the common good, not just profit. FloraFeral is a passion project created to empower creators, not extract money from them. Open-source, transparent, and community-driven.',
     open: false
+  },
+  {
+    question: 'Why doesn\'t FloraFeral have cloud storage or real-time collaboration?',
+    answer: 'FloraFeral is designed to be a reliable, long-lasting tool. With a single maintainer, the focus is on sustainable core features that can be maintained long-term. This approach ensures the project remains stable and trustworthy for years to come, rather than adding complexity that could compromise its reliability.',
+    open: false
   }
 ])
 

@@ -283,7 +283,7 @@ const toggleFaq = (index) => {
                 </div>
               </div>
               <h3 class="tutorial-title">Creating a set of icons while maintaning consistency</h3>
-              <p class="tutorial-description">Learn to chain models in a single workflow</p>
+              <p class="tutorial-description">Maintain visual coherence across multiple icon designs</p>
             </div>
             <div class="tutorial-card tutorial-card-disabled">
               <div class="tutorial-placeholder">

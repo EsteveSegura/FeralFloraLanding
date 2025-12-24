@@ -272,15 +272,17 @@ const toggleFaq = (index) => {
               <h3 class="tutorial-title">From Zero to First Image</h3>
               <p class="tutorial-description">Complete beginner's guide to your first generation</p>
             </div>
-            <div class="tutorial-card tutorial-card-disabled">
-              <div class="tutorial-placeholder">
-                <svg class="tutorial-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span class="soon-badge">Soon</span>
+            <div class="tutorial-card" @click="openVideoModal('https://www.youtube.com/embed/KqdnvYihBQ4')">
+              <div class="tutorial-thumbnail">
+                <img src="../assets/miniature_2.png" alt="Creating a set of icons" class="thumbnail-image" />
+                <div class="play-button-overlay">
+                  <svg class="tutorial-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
               </div>
-              <h3 class="tutorial-title">Combine Two Models</h3>
+              <h3 class="tutorial-title">Creating a set of icons while maintaning consistency</h3>
               <p class="tutorial-description">Learn to chain models in a single workflow</p>
             </div>
             <div class="tutorial-card tutorial-card-disabled">
@@ -922,6 +924,13 @@ const toggleFaq = (index) => {
   position: relative;
   overflow: hidden;
   background: var(--flora-color-bg-tertiary);
+}
+
+.tutorial-thumbnail .soon-badge {
+  position: absolute;
+  top: var(--flora-space-3);
+  right: var(--flora-space-3);
+  z-index: 10;
 }
 
 .thumbnail-image {

@@ -76,7 +76,7 @@ const toggleFaq = (index) => {
           <div class="hero-content">
             <div class="hero-text">
               <h1 class="hero-title">
-                Full Control Over Your AI Generations
+                Drag, Drop, Generate.<br />AI Without Complexity
               </h1>
               <p class="hero-subtitle">
                 FloraFeral is an open-source canvas for orchestrating multiple models and producing reproducible images. No accounts, no backend, your data stays on your device.
